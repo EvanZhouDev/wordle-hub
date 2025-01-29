@@ -22,7 +22,8 @@ export default async function WordPage({ params }) {
 	};
 	let wordData = [];
 	let status = [];
-	const word = params.word.toLowerCase();
+	const { word: rawWord } = await params
+	const word = rawWord.toLowerCase();
 
 	const possibleWordsPath = path.join(
 		process.cwd(),
