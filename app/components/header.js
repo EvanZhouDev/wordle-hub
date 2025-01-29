@@ -14,7 +14,7 @@ export default function Header() {
 				placeholder="Enter Word to Search..."
 				onKeyDown={(e) => {
 					if (e.key === "Enter") {
-						router.push(`/${e.target.value}`);
+						router.push(`/${e.target.value.toLowerCase()}`);
 					}
 				}}
 				className="border focus:border-[#898989] focus:outline-none px-4 py-3 rounded-full w-[100%] max-w-[700px]"

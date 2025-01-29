@@ -22,7 +22,7 @@ export default async function WordPage({ params }) {
 	};
 	let wordData = [];
 	let status = [];
-	const word = params.word;
+	const word = params.word.toLowerCase();
 
 	const possibleWordsPath = path.join(
 		process.cwd(),
@@ -69,8 +69,8 @@ export default async function WordPage({ params }) {
 					status.includes(STATUS.POSSIBLE)
 						? "correct"
 						: status.includes(STATUS.IMPOSSIBLE)
-						? "partially correct"
-						: "incorrect"
+							? "partially correct"
+							: "incorrect"
 				}
 			/>
 
@@ -110,7 +110,7 @@ export default async function WordPage({ params }) {
 						Word Not in Dictionary
 					</span>
 				) : word.length != 5 ||
-				  (!possibleWordle.includes(word) &&
+					(!possibleWordle.includes(word) &&
 						!impossibleWordle.includes(word)) ? (
 					<div className="relative inline-flex items-center group">
 						<span className="flex flex-row gap-2 p-1 px-2 align-center justify-center text-xl border border-[#898989] bg-[#89898922] text-[#898989] rounded-full">
