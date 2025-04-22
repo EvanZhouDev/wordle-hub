@@ -8,6 +8,9 @@ export default function Home() {
 				<Word word="wordle" status="correct" />
 				<Word word="hub" delay={100 * 6} />
 			</div>
+			<div className="opacity-40">
+				Enter a word to check its meaning, and whether or not it's valid in the game Wordle.
+			</div>
 		</div>
 	);
 }
